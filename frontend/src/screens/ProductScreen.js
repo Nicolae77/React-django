@@ -14,13 +14,16 @@ function ProductScreen({match}) {
     
     async function fetchProduct(){
       const { data } = await axios.get(`/api/products/${match.params.id}`)
+      
       setProduct(data)
 
     }
     
     fetchProduct()
     
+    
   }, [])
+  
   return (
       <div>
         <Link to='/' className='btn btn-light my-3'>Go back</Link>
